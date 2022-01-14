@@ -1,0 +1,37 @@
+<!doctype html>
+ <head>
+<style>
+body{
+background-color: #ffCCff;
+color:green;
+}
+</style>
+<script>
+var anim=setInterval(grow,100);
+fs=5;
+function grow(){
+fs+=5;
+document.getElementById('animText').innerHTML="Text Growing";
+document.getElementById('animText').style.color="red";
+document.getElementById('animText').style.fontSize=fs+"pt";
+if(fs>50)
+{
+clearInterval(anim);
+anim=setInterval(shrink,100);
+} }
+function shrink(){
+fs-=5;
+document.getElementById('animText').innerHTML="Text shrinking";
+document.getElementById('animText').style.color="Blue";
+document.getElementById('animText').style.fontSize=fs+"pt";
+if(fs<5)
+{
+clearInterval(anim);
+anim=setInterval(grow,100);
+} }
+</script>
+</head>
+<body>
+<span id="animText"></span>
+</body>
+</html>
